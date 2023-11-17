@@ -11,7 +11,7 @@ local global_opts = nil
 
 ---@diagnostic disable-next-line: unused-local
 local get_image_data_sync = function(buf_path, width, height, opts, callback)
-  local command = { "chafa", buf_path, "--size", width .. "x" .. height }
+  local command = { "chafa", buf_path, "--size", width .. "x" .. height, "--scale=1.0", "--animate=off", "--center=on", "--format=symbols" }
 
   vim.fn.jobstart(command, {
     stdout_buffered = true,
